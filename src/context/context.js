@@ -39,7 +39,6 @@ const AppProvider = ({children}) => {
         const temp = filterGroups.slice();
         temp[index].conjunction = value;
         setFilterGroups(temp);
-        console.log(filterGroups)
     }
 
     return (
