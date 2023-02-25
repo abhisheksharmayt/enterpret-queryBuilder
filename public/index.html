@@ -41,3 +41,84 @@
     -->
   </body>
 </html>
+
+<!-- <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var emailFieldId = 'email';
+    var emailFieldTarget = document.getElementById(emailFieldId);
+    console.log(emailFieldTarget);
+    emailFieldTarget.setAttribute('data-nb', '');
+  });
+</script>
+
+<script type="text/javascript">
+  document.querySelector('body').addEventListener('nb:registered', function (event) {
+    document.getElementById('signup-submit').disabled = true;
+    // Get field using id from registered event
+    let field = document.querySelector('[data-nb-id="' + event.detail.id + '"]');
+    // Handle results (API call has succeeded)
+    field.addEventListener('nb:result', function (e) {
+      if (e.detail.result.is(_nb.settings.getAcceptedStatusCodes())) {
+        // Do stuff for good email
+        document.getElementById('signup-submit').disabled = false;
+      }
+      else {
+        // Do stuff for bad email
+        console.log('bad email');
+        document.getElementById('signup-submit').disabled = true;
+      }
+      // }
+    });
+  });
+</script>
+
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function (event) {
+    var emailFieldId = 'email';
+    var emailFieldTarget = document.getElementById(emailFieldId);
+    console.log(emailFieldTarget);
+    emailFieldTarget.setAttribute('data-nb', '');
+  });
+</script>
+
+<script type="text/javascript">
+  document.querySelector('body').addEventListener('nb:registered', function (event) {
+    document.getElementById('signup-submit').disabled = true;
+    // Get field using id from registered event
+    let field = document.querySelector('[data-nb-id="' + event.detail.id + '"]');
+    // Handle results (API call has succeeded)
+    field.addEventListener('nb:result', function (e) {
+      if (e.detail.result.is(_nb.settings.getAcceptedStatusCodes())) {
+        // Do stuff for good email
+        document.getElementById('signup-submit').disabled = false;
+      }
+      else {
+        // Do stuff for bad email
+        console.log('bad email');
+        document.getElementById('signup-submit').disabled = true;
+      }
+      // }
+    });
+  });
+</script>
+
+document.querySelector("form").onsubmit=function() {
+  	let emailFieldId = 'Email-Id';
+  	let emailFieldTarget = document.getElementById(emailFieldId);
+    
+    if (!isValidEmailAddress(emailFieldTarget.value)) {
+    	console.log("bad email");
+      alert('Please enter a valid address');
+      return false; // cancel submit
+    }
+    return true; // allow submit
+  }
+
+  <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function (event) {
+      var form = document.querySelector('form');
+      console.log(form);
+      form.setAttribute('onsubmit', 'return isValidEmailAddress();');
+    });
+  </script> -->
