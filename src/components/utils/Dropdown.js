@@ -6,7 +6,6 @@ const Dropdown = ({ name, options, value, updateSelection }) => {
     const dropdown_list = useRef(null);
     const [height, setHeight] = useState(0);
     useEffect(() => {
-        const listHeight = dropdown_list.current.offsetHeight;
         dropdown_div.current.style.height = 0;
         setHeight(0);
     }, []);
@@ -47,7 +46,7 @@ const Dropdown = ({ name, options, value, updateSelection }) => {
                     className={`${(height === 0) ? '' : 'rotate-180'} transition-all ease-in-out text-xl`}
                 />
             </div>
-            
+
             <div
                 className='dropdown_div overflow-hidden transition-all absolute z-30 w-[250px]'
                 ref={dropdown_div}

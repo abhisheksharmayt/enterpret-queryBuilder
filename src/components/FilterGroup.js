@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Filter from './Filter';
 import { useGlobalContext } from '../context/context';
 import { v4 as uuidv4 } from 'uuid';
 
 const FilterGroup = ({ index, group }) => {
     const { filterGroups, newFilterGroups, updateConjunction } = useGlobalContext();
-    const [logic, setLogic] = useState(group.conjunction);
     // console.log(group.conjunction);
 
     const addFilter = () => {

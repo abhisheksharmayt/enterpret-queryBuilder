@@ -68,7 +68,7 @@ const Filter = ({ filterIndex, groupIndex, id }) => {
 
             </div>
             {
-                (filterIndex != 0) &&
+                (filterIndex !== 0) &&
                 <div
                     className='p-3 rounded-md bg-[#ffffff0d] cursor-pointer'
                     onClick={deleteFilter}
