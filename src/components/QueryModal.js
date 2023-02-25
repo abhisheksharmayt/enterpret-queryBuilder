@@ -15,7 +15,6 @@ const QueryModal = () => {
         for (let i = 0; i < query.length; i++) {
             if (i >= tempShowMore.length) tempShowMore.push(false);
         }
-        console.log(tempShowMore);
         setShowMore([...tempShowMore]);
     }, [query])
 
@@ -36,8 +35,8 @@ const QueryModal = () => {
     }
 
     return (
-        <div className='absolute z-10 w-full h-full'>
-            <div className='my-[100px] mx-auto h-[640px] w-[960px] bg-[#1D2025] rounded-md md-[500px]'>
+        <div className='absolute z-10 w-full h-full overflow-auto'>
+            <div className='relative my-[50px] mx-auto max-h-[640px] w-[960px] bg-[#1D2025] rounded-md md-[500px]'>
                 <div className='relative w-full bg-[#5C61F0] max-h-[140px] p-5 text-white rounded-t-md overflow-hidden'>
                     <div className='flex justify-between'>
                         {
@@ -75,37 +74,45 @@ const QueryModal = () => {
                                                 onClick={() => toggleMore(index)}
                                             >more...</div>
                                         </div>
-                    )
+                                    )
                                 })
-                    ) : (
-                    <p className='opacity-50 text-sm'>The query you build will be saved in your active view</p>
-                    )
-                        }
-                </div>
-            </div>
-            <div className='h-[500px] flex p-5 z-30 rounded-b-md  overflow-scroll'>
-                <div className='w-full h-fit relative max-h-fit'>
-                    {
-                        filterGroups.map((group, index) => {
-                            const { id } = group;
-                            return (
-                                <FilterGroup key={id} index={index} group={group} />
+                            ) : (
+                                <p className='opacity-50 text-sm'>The query you build will be saved in your active view</p>
                             )
-                        })
-                    }
-                    <div className=' text-white mb-10'>
-                        <div className='h-10 w-[1px] bg-[#5C61F0] ml-10'></div>
-                        <button
-                            className='py-2 px-4 bg-[#5C61F0] rounded-md'
-                            onClick={addFilterGroup}
-                        >
-                            + Add New Group Filter
-                        </button>
+                        }
                     </div>
                 </div>
+                <div className='h-[500px] flex p-5 z-30 rounded-b-md  overflow-scroll'>
+                    <div className='w-full h-fit relative max-h-fit'>
+                        {
+                            filterGroups.map((group, index) => {
+                                const { id } = group;
+                                return (
+                                    <div key={id} >
+                                        <FilterGroup index={index} group={group} />
+                                        <div className='h-10 w-[1px] bg-[#5C61F0] ml-10'></div>
+                                    </div>
+                                )
+                            })
+                        }
+                        <div className=' text-white mb-10'>
+                            <button
+                                className='py-2 px-4 bg-[#5C61F0] rounded-md'
+                                onClick={addFilterGroup}
+                            >
+                                + Add New Group Filter
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    className='py-2 px-4 bg-[#5C61F0] rounded-md text-white absolute -bottom-14 left-1/2 -translate-x-1/2'
+                    onClick={() => console.log(filterGroups)}
+                >
+                    Get rule object in console
+                </button>
             </div>
         </div>
-        </div >
     )
 }
 

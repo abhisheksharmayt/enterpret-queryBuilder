@@ -16,7 +16,7 @@ const FilterGroup = ({ index, group }) => {
     }
 
     return (
-        <div className='text-white bg-[#282B30] border-[#404348] border-[1px] w-full p-5 rounded-md mt-10'>
+        <div className='text-white bg-[#282B30] border-[#404348] border-[1px] w-full p-5 rounded-md'>
             <div className='bg-[#ffffff0d] rounded-md border-[#404348] border-[1px] overflow-hidden text-sm max-w-fit'>
                 <button
                     className={`w-16 py-2 px-3 ${(group.conjunction === 'AND') ? 'bg-[#5C61F0]' : ''}`}

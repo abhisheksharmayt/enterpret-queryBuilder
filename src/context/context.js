@@ -23,7 +23,6 @@ const AppProvider = ({children}) => {
                 if(child.field && child.criteria && child.condition){
                     if(tempQuery !== '') tempQuery += ` ${conjuction.get(group.conjunction)} `;
                     tempQuery += `"field.${child.field.toLowerCase()} ${conditions.get(child.condition)} \\"${child.criteria}"\\"`;
-                    console.log(tempQuery);
                 }
             }
             if(tempQuery !== '')
